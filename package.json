@@ -10,18 +10,14 @@
     "slidev": ">=0.19.3"
   },
   "scripts": {
-    "build": "slidev build slides.md",
-    "dev": "slidev slides.md",
-    "export": "slidev export slides.md",
-    "screenshot": "slidev export slides.md --format png"
+    "build": "slidev build",
+    "dev": "slidev",
+    "export": "slidev export",
+    "screenshot": "slidev export --format png"
   },
   "dependencies": {
     "@slidev/types": "^0.49.2",
     "@iconify-json/fa6-brands": "^1.1.18"
-  },
-  "devDependencies": {
-    "@iconify-json/fa6-brands": "^1.1.18",
-    "@slidev/cli": "^0.49.2"
   },
   "//": "Learn more: https://sli.dev/themes/write-a-theme.html",
   "slidev": {
