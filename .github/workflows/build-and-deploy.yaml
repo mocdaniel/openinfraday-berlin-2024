@@ -21,18 +21,16 @@ jobs:
           node-version: 18
           registry-url: https://registry.npmjs.org/
           cache: 'npm'
-      - name: Install slidev
-        run: npm install -g "@slidev/cli"
       - name: Install dependencies
         run: npm install
       - name: Print dependencies
         run: npm list
       - name: Build slides
-        run: slidev build --base /openinfraday-berlin-2024/
+        run: npm run slidev build --base /openinfraday-berlin-2024/
       - name: Upload built slides as artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./dist/slides
+          path: ./dist
 
   deploy:
     needs: build
