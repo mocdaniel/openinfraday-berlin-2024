@@ -12,21 +12,23 @@ concurrency:
 
 jobs:
   build:
+    # <Not provided for brevity>
+    # At a minimum this job should upload artifacts using actions/upload-pages-artifact
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 16
           registry-url: https://registry.npmjs.org/
           cache: 'npm'
+      - name: Install slidev
+        run: npm install -g @slidev/cli
       - name: Install dependencies
         run: npm install
-      - name: Print dependencies
-        run: npm list
       - name: Build slides
-        run: npm run slidev build --base /openinfraday-berlin-2024/
+        run: slidev build --base /openinfraday-berlin-2024/
       - name: Upload built slides as artifact
         uses: actions/upload-pages-artifact@v1
         with:
