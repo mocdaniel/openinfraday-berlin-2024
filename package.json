@@ -16,7 +16,8 @@
     "screenshot": "slidev export slides.md --format png"
   },
   "dependencies": {
-    "@slidev/types": "^0.49.0-beta.6"
+    "@slidev/types": "^0.49.0-beta.6",
+    "@iconify-json/fa6-brands": "^1.1.18"
   },
   "devDependencies": {
     "@iconify-json/fa6-brands": "^1.1.18",
