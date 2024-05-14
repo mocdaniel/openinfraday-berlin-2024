@@ -53,9 +53,9 @@ clicks: 3
     <template #3> This? </template>
   </v-switch>
   <v-switch at="1">
-    <template #1> <img class="h-96" src="idps.png" alt="commercial IDPs" /> </template>
-    <template #2> <img class="h-96 ml-8" src="cncfmeme.png" alt="the CNCF landscape meme" /> </template>
-    <template #3> <img class="h-96" src="links.png" alt="a collection of links" /> </template>
+    <template #1> <img class="h-96" src="/idps.png" alt="commercial IDPs" /> </template>
+    <template #2> <img class="h-96 ml-8" src="/cncfmeme.png" alt="the CNCF landscape meme" /> </template>
+    <template #3> <img class="h-96" src="/links.png" alt="a collection of links" /> </template>
   </v-switch>
 </div>
 
@@ -68,9 +68,9 @@ transition: slide-up
 
 <div class="flex flex-col justify-around w-full h-full items-center">
     <div class="flex flex-row justify-between w-full">
-      <img class="w-64" src="idps.png" alt="commercial IDPs" />
-      <img class="w-64" src="cncfmeme.png" alt="the CNCF landscape meme" />
-      <img class="w-64" src="links.png" alt="a collection of links" />
+      <img class="w-64" src="/idps.png" alt="commercial IDPs" />
+      <img class="w-64" src="/cncfmeme.png" alt="the CNCF landscape meme" />
+      <img class="w-64" src="/links.png" alt="a collection of links" />
     </div>
     <h1>Any of these!</h1>
 </div>
@@ -121,8 +121,8 @@ transition: slide-left
 
 <div class="h-3/4 flex flex-col justify-end items-center">
   <v-switch>
-    <template #1> <img class="mx-auto w-200" alt="Dev/QA/Ops with walls of confusion between them" src="devops.png" /> </template>
-    <template #2> <img class="mx-auto w-200" alt="Dev/QA/Ops with walls torn down" src="devops-new.png" /> </template>
+    <template #1> <img class="mx-auto w-200" alt="Dev/QA/Ops with walls of confusion between them" src="/devops.png" /> </template>
+    <template #2> <img class="mx-auto w-200" alt="Dev/QA/Ops with walls torn down" src="/devops-new.png" /> </template>
   </v-switch>
 </div>
 
@@ -136,8 +136,8 @@ transition: slide-left
 
 <div class="h-full flex flex-col justify-center items-center">
   <v-switch>
-    <template #1> <img class="mx-auto w-200" alt="Multiple teams, each with their own tools" src="platformeng.png" /> </template>
-    <template #2> <img class="mx-auto pb-12 h-110" alt="Multiple teams with shared tooling on a platform" src="platformeng-new.png" /> </template>
+    <template #1> <img class="mx-auto w-200" alt="Multiple teams, each with their own tools" src="/platformeng.png" /> </template>
+    <template #2> <img class="mx-auto pb-12 h-110" alt="Multiple teams with shared tooling on a platform" src="/platformeng-new.png" /> </template>
   </v-switch>
 </div>
 
@@ -201,7 +201,7 @@ transition: slide-left
   - ...coordinate contributions
   - ...offer guidance on available technologies
   </div>
-  <img class="w-100" src="cnoe-logo.png" alt="the CNOE logo"/>
+  <img class="w-100" src="/cnoe-logo.png" alt="the CNOE logo"/>
 </div>
 
 ---
@@ -277,7 +277,7 @@ transition: slide-left
 
 # idpbuilder - Overview
 
-<img class="h-5/6 mx-auto" src="cnoe-ref-figure.png" alt="idpbuilder figure" />
+<img class="h-5/6 mx-auto" src="/cnoe-ref-figure.png" alt="idpbuilder figure" />
 
 ---
 layout: default
@@ -295,11 +295,11 @@ transition: slide-up
     <template #5> <h3>Keycloak</h3> Cloud-Native IAM Platform </template>
   </v-switch>
   <v-switch at="1">
-    <template #1> <img class="h-96" src="argocd.png" alt="ArgoCD logo" /> </template>
-    <template #2> <img class="h-96 ml-8" src="gitea.svg" alt="Gitea logo" /> </template>
-    <template #3> <img class="h-96" src="backstage.svg" alt="Backstage logo" /> </template>
-    <template #4> <img class="h-96" src="crossplane.png" alt="Crossplane logo" /> </template>
-    <template #5> <img class="h-64" src="keycloak.png" alt="Keycloak logo" /> </template>
+    <template #1> <img class="h-96" src="/argocd.png" alt="ArgoCD logo" /> </template>
+    <template #2> <img class="h-96 ml-8" src="/gitea.svg" alt="Gitea logo" /> </template>
+    <template #3> <img class="h-96" src="/backstage.svg" alt="Backstage logo" /> </template>
+    <template #4> <img class="h-96" src="/crossplane.png" alt="Crossplane logo" /> </template>
+    <template #5> <img class="h-64" src="/keycloak.png" alt="Keycloak logo" /> </template>
   </v-switch>
 </div>
 
