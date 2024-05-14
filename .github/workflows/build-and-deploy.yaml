@@ -21,6 +21,8 @@ jobs:
           node-version: 18
           registry-url: https://registry.npmjs.org/
           cache: 'npm'
+      - name: Install slidev
+        run: npm install -g "@slidev/cli"
       - name: Install dependencies
         run: npm install
       - name: Print dependencies
