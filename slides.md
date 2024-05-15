@@ -26,7 +26,7 @@ transition: slide-left
 
 # 80% of Engineering Organizations
 
-will establish Platform Engineering teams by 2026, according to Gartner <sup>[1](https://www.gartner.com/en/articles/what-is-platform-engineering)</sup>.
+will establish Platform Engineering teams by 2026, according to Gartner<sup>[1](https://www.gartner.com/en/articles/what-is-platform-engineering)</sup>
 
 ---
 layout: speaker
@@ -293,6 +293,7 @@ transition: slide-up
     <template #3> <h3>Backstage</h3> Service Catalog & IDP Framework </template>
     <template #4> <h3>Crossplane</h3> Cloud-Native Controlplane Framework </template>
     <template #5> <h3>Keycloak</h3> Cloud-Native IAM Platform </template>
+    <template #6> <h3>External Secrets Operator</h3> External Secret Management for Kubernetes </template>
   </v-switch>
   <v-switch at="1">
     <template #1> <img class="h-96" src="/argocd.png" alt="ArgoCD logo" /> </template>
@@ -300,6 +301,7 @@ transition: slide-up
     <template #3> <img class="h-96" src="/backstage.svg" alt="Backstage logo" /> </template>
     <template #4> <img class="h-96" src="/crossplane.png" alt="Crossplane logo" /> </template>
     <template #5> <img class="h-64" src="/keycloak.png" alt="Keycloak logo" /> </template>
+    <template #6> <img class="h-96" src="/eso.svg" alt="ExternalSecretsOperator logo" /> </template>
   </v-switch>
 </div>
 
@@ -308,3 +310,100 @@ layout: section
 ---
 
 # Demo
+
+---
+layout: default
+transition: slide-up
+---
+
+# idpbuilder - Adding Packages
+
+<div class="flex flex-row justify-between h-4/5 items-center">
+  
+  <div class="w-1/2">
+
+  - Defined by ArgoCD `Application` resources
+  - Gitea repository gets created automatically
+  - Backstage configuration gets applied via GitOps
+  - Arbitrary contents are possible to integrate with other tooling (e.g. Crossplane)
+
+  </div>
+  
+```yaml {|11|13-15}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nws-crossplane
+  namespace: argocd
+  labels:
+    env: dev
+spec:
+  project: default
+  source:
+    repoURL: cnoe://manifests/entities
+    targetRevision: HEAD
+    path: "."
+    directory:
+      exclude: "catalog-info.yaml"
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: backstage
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      selfHeal: true
+```
+
+</div>
+
+---
+layout: section
+transition: slide-left
+---
+
+# Summing It Up...
+
+---
+layout: default
+transition: slide-left
+---
+
+# Summing It Up...
+
+<div class="flex flex-col justify-center h-4/5">
+
+- ...**platforms can enable** standardized, streamlined processes throughout your engineering organization
+- ...**building platforms is about empathy** with your team(s) and strategic decisions regarding integrated technologies
+- ...**the CNOE project defines and promotes** feasible, proven standard tooling for building customizable platforms
+- ...**idpbuilder can help** by bootstrapping portable, demo-able, and customizable platforms
+
+</div>
+
+---
+layout: default
+---
+
+# Thank you
+
+for your time and interest!
+
+<div class="flex flex-row h-4/5 justify-around">
+
+  <div>
+
+  Learn more here:
+
+  - [CNCF Platforms White Paper](https://tag-app-delivery.cncf.io/whitepapers/platforms/)
+  - [CNOE Project](https://cnoe.io)
+  - [idpbuilder GitHub repository](https://github.com/cnoe-io/idpbuilder)
+  - [idpbuilder Reference Implementation](https://github.com/cnoe-io/idpbuilder/tree/main/examples/ref-implementation)
+  
+  </div>
+
+  <div class="w-1/2 pt-8 flex flex-col items-center justify-start gap-2">
+  <img class="h-48" src="/slides-qrcode.png" alt="QR code to the slides" />
+
+  \[slides.dbodky.me/openinfraday-berlin-2024\]
+  </div>
+</div>
